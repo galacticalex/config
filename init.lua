@@ -21,7 +21,11 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2 vim.opt.softtabstop = 2 vim.wo.colorcolumn = "110"
 
-vim.cmd("colorscheme murphy")
+
+-- leader keys
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 
 -- keybindings 
@@ -35,7 +39,7 @@ vim.api.nvim_set_keymap("n", ";", ":", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-s>", "<Esc>:w<Enter>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-j>", "<Esc>:w<Enter>:source %<Enter>", {noremap = true})
 vim.api.nvim_set_keymap("n", "TT", ":terminal<Enter>:set nonumber<Enter>a", {noremap = true})
-vim.api.nvim_set_keymap("n", "BB", ":terminal<Enter>:set nonumber<Enter>arlwrap bb<Enter>", {noremap = true})
+vim.api.nvim_set_keymap("n", "TB", ":terminal<Enter>:set nonumber<Enter>arlwrap bb<Enter>", {noremap = true})
 
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", {noremap = true})
 vim.api.nvim_set_keymap("i", "<C-f>", "<Esc>A", {noremap = true})
@@ -44,28 +48,43 @@ vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true})
 vim.api.nvim_set_keymap("t", "jj", "<C-\\><C-n>", {noremap = true})
 vim.api.nvim_set_keymap("t", "<C-f>", "<Right><Right><Right><Right><Right><Right>", {noremap = true})
 
+vim.api.nvim_set_keymap("n", "<leader>n", ":bn<Enter>", {noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>p", ":bp<Enter>", {noremap = true})
+
+vim.api.nvim_set_keymap("t", "<leader>n", ":bn<Enter>", {noremap = true})
+vim.api.nvim_set_keymap("t", "<leader>p", ":bp<Enter>", {noremap = true})
 
 -- plugin manager
+
+-- not gonna use these for a while
+-- Plug 'Olical/conjure'
+-- Plug 'jiangmiao/auto-pairs'
 
 vim.cmd([[
 
 call plug#begin(stdpath('data') . '/plugged')
 
-Plug 'Olical/conjure'
-Plug 'jiangmiao/auto-pairs'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 
 call plug#end()
 
 ]])
 
 
--- leader keys
+-- colours
+-- using https://github.com/NLKNguyen/papercolor-theme
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.cmd([[
+set t_Co=256
+set background=dark
+colorscheme PaperColor
+]])
 
 
 -- clerk
+--
+-- sometimes needs (clerk/serve! {:browse? true}) evaluating first
 
 vim.cmd([[
 function! ClerkShow()
