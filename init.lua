@@ -30,23 +30,23 @@ vim.g.maplocalleader = " "
 
 -- keybindings 
 
-vim.api.nvim_set_keymap("n", "<C-h>", "<C-w><C-h>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-j>", "<C-w><C-j>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-k>", "<C-w><C-k>", {noremap = true})
-vim.api.nvim_set_keymap("n", "<C-l>", "<C-w><C-l>", {noremap = true})
+-- not used much - better use for these
+-- vim.api.nvim_set_keymap("n", "<C-h>", "<C-w><C-h>", {noremap = true})
+-- vim.api.nvim_set_keymap("n", "<C-j>", "<C-w><C-j>", {noremap = true})
+-- vim.api.nvim_set_keymap("n", "<C-k>", "<C-w><C-k>", {noremap = true})
+-- vim.api.nvim_set_keymap("n", "<C-l>", "<C-w><C-l>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", ";", ":", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-s>", "<Esc>:w<Enter>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<C-j>", "<Esc>:w<Enter>:source %<Enter>", {noremap = true})
 vim.api.nvim_set_keymap("n", "TT", ":terminal<Enter>:set nonumber<Enter>a", {noremap = true})
-vim.api.nvim_set_keymap("n", "TB", ":terminal<Enter>:set nonumber<Enter>arlwrap bb<Enter>", {noremap = true})
+vim.api.nvim_set_keymap("n", "TR", ":terminal<Enter>:set nonumber<Enter>aR<Enter>", {noremap = true})
 
 vim.api.nvim_set_keymap("i", "jj", "<Esc>", {noremap = true})
 vim.api.nvim_set_keymap("i", "<C-f>", "<Esc>A", {noremap = true})
 
 vim.api.nvim_set_keymap("t", "<Esc>", "<C-\\><C-n>", {noremap = true})
 vim.api.nvim_set_keymap("t", "jj", "<C-\\><C-n>", {noremap = true})
-vim.api.nvim_set_keymap("t", "<C-f>", "<Right><Right><Right><Right><Right><Right>", {noremap = true})
 
 vim.api.nvim_set_keymap("n", "<leader>n", ":bn<Enter>", {noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>p", ":bp<Enter>", {noremap = true})
@@ -58,13 +58,13 @@ vim.api.nvim_set_keymap("t", "<leader>p", ":bp<Enter>", {noremap = true})
 
 -- not gonna use these for a while
 -- Plug 'Olical/conjure'
--- Plug 'jiangmiao/auto-pairs'
 
 vim.cmd([[
 
 call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'jiangmiao/auto-pairs'
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 
 call plug#end()
@@ -82,18 +82,18 @@ colorscheme PaperColor
 ]])
 
 
--- clerk
+-- using R means following is unused
 --
 -- sometimes needs (clerk/serve! {:browse? true}) evaluating first
 
-vim.cmd([[
-function! ClerkShow()
-  exe "w"
-  exe "ConjureEval (nextjournal.clerk/show! \"" . expand("%:p") . "\")"
-endfunction
-
-nmap <silent> <localleader>cs :execute ClerkShow()<CR>
-]])
+-- vim.cmd([[
+-- function! ClerkShow()
+--   exe "w"
+--   exe "ConjureEval (nextjournal.clerk/show! \"" . expand("%:p") . "\")"
+-- endfunction
+-- 
+-- nmap <silent> <localleader>cs :execute ClerkShow()<CR>
+-- ]])
 
 -- currently unused
 
@@ -111,6 +111,9 @@ nmap <silent> <localleader>cs :execute ClerkShow()<CR>
 --vim.api.nvim_set_keymap("t", "{", "{}<Left>", {noremap = true})
 --vim.api.nvim_set_keymap("t", "\"", "\"\"<Left>", {noremap = true})
 
+-- 
+-- like paredit
+vim.api.nvim_set_keymap("i", "<A-h>", "<Esc>wvEdPa", {noremap = true})
 
 -- motivation
 
