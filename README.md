@@ -1,17 +1,23 @@
+
+<!-- SPDX-FileCopyrightText: Copyright 2022 Alex Murphy <supernova@alexmurphy.uk> -->
+<!-- -->
+<!-- SPDX-Licence-Identifier: CC0-1.0 -->
+
 # [neovim](https://neovim.io/) config
 
-## Remember a few things:
+_First time install notes to self._
 
-Plugin manager installed with 
+[plug.vim](https://github.com/junegunn/vim-plug) is installed with:
 
-`curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim` (from [here](https://www.linode.com/docs/guides/how-to-install-neovim-and-plugins-with-vim-plug/)
+> `curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`.
 
-Navigate to `~/.config/nvim` and run:
+Then, navigate into _~/.config/nvim/_ and run the following:
 
-`git clone https://github.com/galacticalex/config.git .`
+`git clone https://github.com/galacticalex/config.git /.`.
 
-Opening first time will error out because the colour scheme is not installed. This is not a problem. Proceed, then run:
+The first time neovim is opened it might error out because the colour scheme is not installed. This is not a problem. Proceed, then run:
 
 `:PlugInstall`
 
 Exit and re-open neovim. 
+
