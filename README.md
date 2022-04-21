@@ -13,7 +13,7 @@ _First time install notes to self._
 
 Then, navigate into _~/.config/nvim/_ and run the following:
 
-`git clone https://github.com/galacticalex/config.git /.`.
+`git clone https://github.com/galacticalex/config.git ./`.
 
 The first time neovim is opened it might error out because the colour scheme is not installed. This is not a problem. Proceed, then run:
 
