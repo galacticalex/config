@@ -7,6 +7,10 @@
 
 _First time install notes to self._
 
+Make a neovim config directory:
+
+> `mkdir ~/.config/nvim`
+
 [plug.vim](https://github.com/junegunn/vim-plug) is installed with:
 
 > `curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`.
