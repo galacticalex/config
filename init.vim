@@ -13,6 +13,8 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-repeat'
 
 Plug 'Olical/conjure'
+
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 let g:rainbow_active = 1
