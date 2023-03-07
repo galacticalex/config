@@ -11,6 +11,7 @@ Plug 'luochen1990/rainbow'
 
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-repeat'
+Plug 'jiangmiao/auto-pairs'
 
 Plug 'Olical/conjure'
 
