@@ -22,7 +22,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 Then run:
 
 ```bash
-git clone https://github.com/galacticalex/config.git ~/.config/nvim/config
+git clone https://github.com/galacticalex/config.git ~/.config/nvim
 ```
 
 The first time neovim is opened it might complain because a colour scheme is not installed. This is not a problem. Proceed and run from ex-mode:

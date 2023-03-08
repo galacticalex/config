@@ -99,5 +99,5 @@ call plug#end()
 let g:rainbow_active = 1
 
 " Colorscheme down here as it gets imported
-colorscheme Apprentice
+colorscheme apprentice
 
