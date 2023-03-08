@@ -1,26 +1,103 @@
-set number
-imap jj <Esc>
-map <C-s> :w<Enter>
+
+" init.vim
+"
+" SPDX-FileCopyrightText: 2023 Alexander Murphy <amsupernova@pm.me>
+"
+" SPDX-License-Identifier: Apache-2.0
+"
+" My vim configuration file.
+
+
+" Settings ------------------
+
+" Ignore capitalisation in searches etc.
 set ignorecase
 
-call plug#begin()
-Plug 'romainl/Apprentice'
-Plug 'vim-airline/vim-airline'
-Plug 'axelf4/vim-strip-trailing-whitespace'
-Plug 'luochen1990/rainbow'
+" Tabs are 4 spaces
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-repeat'
-Plug 'jiangmiao/auto-pairs'
+" Highlight column as formatting guide
+set colorcolumn=110
 
-Plug 'Olical/conjure'
+" Should be enabled, but to be sure in older vim installations
+syntax enable
+filetype plugin indent on
 
-Plug 'mileszs/ack.vim'
-call plug#end()
+" Show line numbers
+set number
 
-let g:rainbow_active = 1
-colorscheme desert
 
+" Mappings ------------------
+
+" Of course.
+imap jj <Esc>
+
+" Quicksave
+map <C-s> :w<Enter>
+
+" Open Python terminal in split window
+nmap <Leader>p <C-w>s<C-w>j:set nonumber<Enter>:term<Enter>Apython<Enter><C-\><C-n><C-w>k
+
+" Quick exit from terminal insert
+tmap <C-j> <C-\><C-n>
+
+" Run visual selection in open terminal
+map <Leader>r y<C-w>jpA<Enter><C-\><C-n><C-w>k
+
+" Quick jump to e.o.l.
+imap <C-f> <Esc>A
+
+" Navigate window splits
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+" Leader is Space key
 nnoremap <Space> <Nop>
 let g:mapleader = " "
 let g:maplocalleader = " "
+
+
+" Plugins -------------------
+
+call plug#begin()
+
+" Colorscheme & formatting
+Plug 'romainl/Apprentice'
+Plug 'luochen1990/rainbow'
+Plug 'jiangmiao/auto-pairs'
+
+" Handy status bar
+Plug 'vim-airline/vim-airline'
+
+" Auto tidying
+Plug 'axelf4/vim-strip-trailing-whitespace'
+
+" Clojure specific
+Plug 'guns/vim-sexp'
+Plug 'Olical/conjure'
+
+" Awesome
+Plug 'tpope/vim-repeat'
+
+" Fast ack
+Plug 'mileszs/ack.vim'
+
+" Codebase analysis
+Plug 'nvim-treesitter/nvim-treesitter'
+
+call plug#end()
+
+
+" Plugin settings -----------
+
+" Enable rainbow parens
+let g:rainbow_active = 1
+
+" Colorscheme down here as it gets imported
+colorscheme Apprentice
+

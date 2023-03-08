@@ -1,7 +1,9 @@
 
 -- SPDX-FileCopyrightText: Copyright 2022 Alex Murphy <supernova@alexmurphy.uk>
 --
--- SPDX-Licence-Identifier: EPL-2.0
+-- SPDX-License-Identifier: Apache-2.0
+--
+-- My old vim configuration file (neovim can be configured with vimscript, or lua)
 
 
 --[[ notes and resources

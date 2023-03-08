@@ -1,25 +1,31 @@
 
 <!-- SPDX-FileCopyrightText: Copyright 2022 Alex Murphy <supernova@alexmurphy.uk> -->
 <!-- -->
-<!-- SPDX-Licence-Identifier: CC0-1.0 -->
+<!-- SPDX-License-Identifier: CC-BY-4.0 -->
 
-# [neovim](https://neovim.io/) config
+# [neovim](https://neovim.io/) configuration
 
-_First time install notes to self._
+_Install notes to self for VMs etc._
 
-Make a neovim config directory:
+Create config directory:
 
-> `mkdir ~/.config/nvim`
+```bash
+mkdir ~/.config/nvim
+```
 
-[plug.vim](https://github.com/junegunn/vim-plug) is installed with:
+Install [vim-plug](https://github.com/junegunn/vim-plug) via script (notice it's going into `.local` not `.config`):
 
-> `curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`.
+```bash
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`.
+```
 
-Then, navigate into _~/.config/nvim/_ and run the following:
+Then run:
 
-`git clone https://github.com/galacticalex/config.git ./`.
+```bash
+git clone https://github.com/galacticalex/config.git ~/.config/nvim/config
+```
 
-The first time neovim is opened it might error out because the colour scheme is not installed. This is not a problem. Proceed, then run:
+The first time neovim is opened it might complain because a colour scheme is not installed. This is not a problem. Proceed and run from ex-mode:
 
 `:PlugInstall`
 
