@@ -73,16 +73,17 @@ colorscheme PaperColor
 
 
 " Mappings ------------------
+"
+" Leader is Space key
+nnoremap <Space> <Nop>
+let g:mapleader = " "
+let g:maplocalleader = " "
 
 " Of course.
 imap jj <Esc>
 
 " Quicksave
 map <C-s> :w<Enter>
-
-" Open Python terminal in split window
-nnoremap <Leader>P <Nop>
-nmap <Leader>P <C-w>s<C-w>j:set nonumber<Enter>:term<Enter>Apython<Enter><C-\><C-n><C-w>k
 
 " Quick exit from terminal insert
 tmap <C-j> <C-\><C-n>
@@ -99,9 +100,7 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-" Leader is Space key
-nnoremap <Space> <Nop>
-let g:mapleader = " "
-let g:maplocalleader = " "
-
+" Open Python terminal in split window
+nnoremap <Leader>P <Nop>
+nmap <Leader>P <C-w>s<C-w>j:set nonumber<Enter>:term<Enter>Apython<Enter><C-\><C-n><C-w>k
 
