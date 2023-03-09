@@ -27,7 +27,9 @@ git clone https://github.com/galacticalex/config.git ~/.config/nvim
 
 The first time neovim is opened it might complain because a colour scheme is not installed. This is not a problem. Proceed and run from ex-mode:
 
-`:PlugInstall`
+`:PlugInstall` for plugins, and then the treesitter grammar with:
+
+`:TSInstall python`.
 
 Exit and re-open neovim. 
 

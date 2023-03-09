@@ -258,3 +258,76 @@ else:
     True
 
 
+# Basic for loop (notice var *in* *iterable*)
+for animal in ["dog", "cat", "mouse"]:
+    print(f"A {animal} is an animal.")
+
+
+# Produce sequence of numbers with range()
+range(2, 8, 2)      # -> range(2, 8, 2)
+range(2, 8, 2)[1]   # -> 4      range() is lazy!
+list(range(1, 3))   # -> [1, 2] inclusive/exclusive bounds
+
+
+# range() implements the Iterable interface, a fundamental Pythonic abstraction
+# But an Iterator is a special type of Iterable
+an_iterator = iter(range(1,3))
+next(an_iterator)   # -> 1
+next(an_iterator)   # -> 2 the Iterator has a memory!
+next(an_iterator)   # -> StopIteration exception, so you can do other stuff
+
+
+# Use enumerate() to iterate over both index and value of a list
+cars = ["red", "blue", "yellow"]
+for i, car in enumerate(cars):
+    print(f"Car {i} is {car}.")
+
+
+i = 0
+while i < 5:
+    print(i**2)
+    i += 1
+
+
+try:
+    raise IndexError("This is an index error!")
+except IndexError as e:
+    print("It's ok") # this is run because we caught it
+else:
+    print("No exceptions")
+finally:
+    print("Always run")
+
+
+# Write to files with 'with' and file()
+with open("myfile1.txt", "w+") as file:
+    file.write("here's some text") # note that this will overwrite the file
+
+
+# Read the same way
+with open("myfile1.txt") as f:
+    print(f.read())
+
+
+# Or with a loop
+with open("myfile1.txt") as f:
+    for line in f:
+        print(line)
+
+
+# JSON library is handy for files
+import json
+contents = {"a": 12, "b": 34}
+with open("myfile1.txt", "w+") as file: # note the w+ here!
+    file.write(json.dumps(contents))
+
+
+# Deleting a file requires os
+import os
+os.remove("myfile1.txt")
+
+
+
+
+
+

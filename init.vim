@@ -30,6 +30,48 @@ filetype plugin indent on
 set number
 
 
+" Plugins -------------------
+
+call plug#begin()
+
+" Colorscheme & formatting
+Plug 'romainl/Apprentice'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'luochen1990/rainbow'
+Plug 'jiangmiao/auto-pairs'
+
+" Handy status bar
+Plug 'vim-airline/vim-airline'
+
+" Auto tidying
+Plug 'axelf4/vim-strip-trailing-whitespace'
+
+" Clojure specific
+"Plug 'guns/vim-sexp'
+"Plug 'Olical/conjure'
+
+" Awesome
+Plug 'tpope/vim-repeat'
+
+" Fast ack
+Plug 'mileszs/ack.vim'
+
+" Codebase analysis
+Plug 'nvim-treesitter/nvim-treesitter'
+
+call plug#end()
+
+
+" Plugin settings -----------
+
+" Enable rainbow parens
+let g:rainbow_active = 1
+
+" Colorscheme down here as it gets imported
+set background=dark
+colorscheme PaperColor
+
+
 " Mappings ------------------
 
 " Of course.
@@ -39,7 +81,8 @@ imap jj <Esc>
 map <C-s> :w<Enter>
 
 " Open Python terminal in split window
-nmap <Leader>p <C-w>s<C-w>j:set nonumber<Enter>:term<Enter>Apython<Enter><C-\><C-n><C-w>k
+nnoremap <Leader>P <Nop>
+nmap <Leader>P <C-w>s<C-w>j:set nonumber<Enter>:term<Enter>Apython<Enter><C-\><C-n><C-w>k
 
 " Quick exit from terminal insert
 tmap <C-j> <C-\><C-n>
@@ -61,43 +104,4 @@ nnoremap <Space> <Nop>
 let g:mapleader = " "
 let g:maplocalleader = " "
 
-
-" Plugins -------------------
-
-call plug#begin()
-
-" Colorscheme & formatting
-Plug 'romainl/Apprentice'
-Plug 'luochen1990/rainbow'
-Plug 'jiangmiao/auto-pairs'
-
-" Handy status bar
-Plug 'vim-airline/vim-airline'
-
-" Auto tidying
-Plug 'axelf4/vim-strip-trailing-whitespace'
-
-" Clojure specific
-Plug 'guns/vim-sexp'
-Plug 'Olical/conjure'
-
-" Awesome
-Plug 'tpope/vim-repeat'
-
-" Fast ack
-Plug 'mileszs/ack.vim'
-
-" Codebase analysis
-Plug 'nvim-treesitter/nvim-treesitter'
-
-call plug#end()
-
-
-" Plugin settings -----------
-
-" Enable rainbow parens
-let g:rainbow_active = 1
-
-" Colorscheme down here as it gets imported
-colorscheme apprentice
 
