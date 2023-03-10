@@ -327,6 +327,161 @@ import os
 os.remove("myfile1.txt")
 
 
+def my_function(x, y):
+    print(f"The product of {x} and {y} is {x*y}.")
+
+
+def variable_arguments(*vars):
+    for i in vars:
+        print(i)
+
+
+def variable_keyword_arguments(**ARGS):
+    return ARGS   # -> {'X': 1, 'Y': 'etc'}
+
+
+def all_the_args(*args, **kwargs):
+    print(args)
+    print(kwargs)
+
+
+def this_returns_a_tuple(x, y):
+    return (y, x)
+
+
+# functions are first class :)
+def create_adder(x):
+    def adder(y):
+        return x + y
+    return adder
+
+add_10 = create_adder(10)
+add_10(3)               # -> 13
+
+# and
+def gimmie_5():
+    return 5
+
+x = add_10(gimmie_5())  # -> 15
+
+
+# Anonymous functions are the best
+(lambda x: x > 2)(3)            # -> True
+(lambda x, y: x * y + 3)(3, 4)  # -> 15
+
+
+# map() is lazy
+map(add_10, range(3))       # -> <map object at 0x7....>
+list(map(add_10, range(3))) # -> [10, 11, 12]
+
+
+# so is filter()
+filter(lambda x: x > 2, range(5))       # -> <filter object at 0x7...>
+list(filter(lambda x: x > 2, range(5))) # -> [3, 4]
+
+
+# List comprehension is unnecessary complexity imho but it works (also *not* lazy!)
+[add_10(x) for x in [1, 2, 3]]      # -? [10, 11, 12]
+[x for x in range(5) if x//2 > 1]   # -> [4]
+
+
+############################
+#         Modules          #
+############################
+
+
+# Python modules are Python files (the module and file will share a name).
+
+
+import math
+math.sqrt(4)        # -> 2
+
+
+from math import floor
+floor(3.7)          # -> 3
+
+
+from math import *  # not smart, you don't see what names are being imported
+
+
+import math as m
+m.sqrt(16)          # -> 4
+
+
+# View imported functions and attributes
+dir(m)
+
+
+############################
+#         Classes          #
+############################
+
+
+# Create a simple class
+class Animal:
+    def f(self):
+        return "hello i'm an animal"
+
+
+# Instantiate the class
+me = Animal()
+
+
+# Call a method
+me.f()      # -> "hello i'm an animal"
+
+
+# Create initial state with special (or 'dunder') methods
+class SuperAnimal:
+    def __init__(self):
+        self.size = 10
+    def f(self):
+        return f"hello, my size is {self.size}"
+
+
+# Instantiating calls the special method __init__
+new_me = SuperAnimal()  # now has self.size == 10
+
+
+new_me.f()      # -> 10
+
+
+# All methods' first arg is self
+class NotAnimal:
+    def f():
+        return False
+
+
+# This will still work...
+oops = NotAnimal()
+
+
+# But this won't...
+try:
+    oops.f()
+except TypeError as e:
+    print("Because we didn't reference self")
+
+
+############################
+#        Extra bits        #
+############################
+
+
+# Make a generator to leverage laziness
+def double_numbers(iterable):
+    for i in iterable:
+        yield i + i
+
+
+# And use like this
+for i in double_numbers(range(5)):
+    print(i)
+    if i >= 30:
+        break
+# Notice that range() *and* double_numbers() are *both* generators!
+
+
 
 
 
