@@ -47,8 +47,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'axelf4/vim-strip-trailing-whitespace'
 
 " Clojure specific
-"Plug 'guns/vim-sexp'
-"Plug 'Olical/conjure'
+Plug 'guns/vim-sexp'
+Plug 'Olical/conjure'
 
 " Awesome
 Plug 'tpope/vim-repeat'
