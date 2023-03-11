@@ -39,6 +39,7 @@ Plug 'romainl/Apprentice'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
+Plug 'khaveesh/vim-fish-syntax'
 
 " Handy status bar
 Plug 'vim-airline/vim-airline'
