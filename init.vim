@@ -105,3 +105,6 @@ nmap <C-l> <C-w>l
 nnoremap <Leader>P <Nop>
 nmap <Leader>P <C-w>s<C-w>j:set nonumber<Enter>:term<Enter>Apython<Enter><C-\><C-n><C-w>k
 
+" Open jshll in terminal
+nnoremap <Leader>J <Nop>
+nmap <Leader>J <C-w>s<C-w>j:set nonumber<Enter>:term<Enter>Ajshell<Enter><C-\><C-n><C-w>k

@@ -1,5 +1,5 @@
 
--- SPDX-FileCopyrightText: Copyright 2022 Alex Murphy <supernova@alexmurphy.uk>
+-- SPDX-FileCopyrightText: Copyright 2022 Alex Murphy <amsupernova@pm.me>
 --
 -- SPDX-License-Identifier: Apache-2.0
 --

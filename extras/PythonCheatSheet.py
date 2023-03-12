@@ -1,7 +1,7 @@
 
 # pythonCheatSheet.py
 #
-# SPDX-FileCopyrightText: 2023 Alexander Murphy <supernova@alexmurphy.uk>
+# SPDX-FileCopyrightText: 2023 Alexander Murphy <amsupernova@pm.me>
 #
 # SPDX-License-Identifier: Apache-2.0
 #
